@@ -11,9 +11,4 @@ RUN yum-config-manager --enable rhel-server-rhscl-7-rpms; yum install -y rh-php7
 # Might want to refine this (something more specific than $APP_DATA)
 RUN chgrp -Rf root $APP_DATA && chmod -Rf go+w $APP_DATA
 
-# Set the default umask to user/group writeable
-RUN find /etc/profile -type f -exec sed -i 's/022/002/g' {} \;
-RUN find /etc/bashrc -type f -exec sed -i 's/022/002/g' {} \;
-RUN find /etc/csh.cshrc -type f -exec sed -i 's/022/002/g' {} \;
-
 USER 1001
