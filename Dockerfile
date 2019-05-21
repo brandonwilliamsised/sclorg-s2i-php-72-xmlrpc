@@ -12,5 +12,6 @@ RUN yum-config-manager --enable rhel-server-rhscl-7-rpms; yum install -y rh-php7
 RUN chgrp -Rf root $APP_DATA && chmod -Rf g+w $APP_DATA
 RUN umask 002
 
+# Test
 USER 1001
 RUN umask 002
